@@ -2,8 +2,8 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/', (req, resp) => {
-    resp.json({msg: 'Hola mundo en express'})
+router.get('/login', (req, res) => {
+    res.render('auth/login');
 })
 
 export default router;
