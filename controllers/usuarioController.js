@@ -4,3 +4,13 @@ const formularioLogin = (req, res) => {
         autenticado: false
     })
 }
+const formularioRegistro = (req, res) => {
+    res.render('auth/registro', {
+        autenticado: false
+    })
+}
+
+export{
+    formularioLogin,
+    formularioRegistro
+}

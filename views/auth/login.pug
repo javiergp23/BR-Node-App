@@ -1,6 +1,8 @@
-div 
+extends ../layout/index
 
-    if autenticado
-        p usuario autenticado
-    else
-        p Inicia sesión
+block contenido
+    div 
+        if autenticado
+            p.text-center usuario autenticado
+        else
+            p.text-center Inicia sesión
