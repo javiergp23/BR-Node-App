@@ -57,6 +57,11 @@ const registrar = async (req, res) => {
         token: generarId()
     })
 
+    //mensaje de confirmación
+    res.render('templates/mensaje', {
+        pagina: 'Cuenta creada correctamente',
+        mensaje: 'Te hemos enviado un email de confirmación'
+    })
 
     const usuario = await Usuario.create(req.body)
     res.json(usuario)
