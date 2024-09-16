@@ -12,6 +12,8 @@ const formularioRegistro = (req, res) => {
         pagina: 'Crear cuenta'
     })
 }
+
+//Función para registrar un usuario
 const registrar = async (req, res) => {
     await check('nombre').notEmpty().withMessage('El nombre no puede ir vacio').run(req)
     await check('email').isEmail().withMessage('Eso no parece un email').run(req)
@@ -56,7 +58,7 @@ const registrar = async (req, res) => {
         token: generarId()
     })
 
-    //mensaje de confirmación
+    //Mensaje de confirmación
     res.render('templates/mensaje', {
         pagina: 'Cuenta creada correctamente',
         mensaje: 'Te hemos enviado un email de confirmación'
@@ -65,6 +67,7 @@ const registrar = async (req, res) => {
     // const usuario = await Usuario.create(req.body)
     // res.json(usuario)
 }
+
 const formularioOlvidePassword = (req, res) => {
     res.render('auth/olvide-password', {
         pagina: 'Recuperar tu acceso a Bienes Raices'
