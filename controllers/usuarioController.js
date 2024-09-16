@@ -35,7 +35,7 @@ const registrar = async (req, res) => {
     }
 
     //extraer los datos
-    // const {nombre, email, password} = req.body
+    const {nombre, email, password} = req.body
 
     const existeUsuario = await Usuario.findOne({ where : { email : req.body.email } })
     if(existeUsuario){
@@ -48,7 +48,6 @@ const registrar = async (req, res) => {
             }
         })
     }
-
     //almacenar un usuario
     await Usuario.create({
         nombre,
@@ -63,8 +62,8 @@ const registrar = async (req, res) => {
         mensaje: 'Te hemos enviado un email de confirmación'
     })
 
-    const usuario = await Usuario.create(req.body)
-    res.json(usuario)
+    // const usuario = await Usuario.create(req.body)
+    // res.json(usuario)
 }
 const formularioOlvidePassword = (req, res) => {
     res.render('auth/olvide-password', {
