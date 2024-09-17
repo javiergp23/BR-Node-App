@@ -1,0 +1,4 @@
+
+const emailRegistro = async (datos) => {
+
+}
