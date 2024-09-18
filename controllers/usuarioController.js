@@ -1,6 +1,7 @@
 import { check, validationResult } from 'express-validator';
 import Usuario from '../models/Usuario.js';
 import { generarId } from '../helpers/token.js';
+import { emailRegistro } from '../helpers/emails.js';
 
 const formularioLogin = (req, res) => {
     res.render('auth/login', {
@@ -37,7 +38,7 @@ const registrar = async (req, res) => {
     }
 
     //extraer los datos
-    const {nombre, email, password} = req.body
+    const {nombre, email, password, token} = req.body
 
     const existeUsuario = await Usuario.findOne({ where : { email : req.body.email } })
     if(existeUsuario){
@@ -56,6 +57,13 @@ const registrar = async (req, res) => {
         email,
         password,
         token: generarId()
+    })
+
+    //envia email de confirmación
+    emailRegistro({
+        nombre,
+        email,
+        token
     })
 
     //Mensaje de confirmación
