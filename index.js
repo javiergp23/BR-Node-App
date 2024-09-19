@@ -8,6 +8,7 @@ const app = express();
 //habilitar lectura de datos de formularios
 app.use(express.urlencoded({ extended: true }));
 
+var templete = '';
 //Conexion a la base de datos
 try{
     await db.authenticate();
