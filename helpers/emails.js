@@ -1,7 +1,6 @@
 import nodemailer from 'nodemailer'
 
 export const emailRegistro = async (datos) => {
-    const figuring = '';
     const transport = nodemailer.createTransport({
         host: process.env.EMAIL_HOSTL,
         port: process.env.EMAIL_PORT,
