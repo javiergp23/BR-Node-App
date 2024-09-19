@@ -81,6 +81,7 @@ const formularioOlvidePassword = (req, res) => {
         pagina: 'Recuperar tu acceso a Bienes Raices'
     })
 }
+
 //exports
 export{
     formularioLogin,
