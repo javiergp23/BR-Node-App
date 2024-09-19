@@ -20,9 +20,7 @@ export const emailRegistro = async (datos) => {
         <p>Si no has recibido el email, revisa tu carpeta de spam</p>
         <p>Si tienes alguna duda, no dudes en contactarnos</p>
         <p>Bienes Raices</p>
-        
         <a href=""</a>
-
         <p>El enlace de confirmación es: ${token}</p>`  
     })
 }
