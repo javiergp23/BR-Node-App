@@ -13,7 +13,6 @@ const formularioRegistro = (req, res) => {
         pagina: 'Crear cuenta'
     })
 }
-
 //Función para registrar un usuario
 const registrar = async (req, res) => {
     await check('nombre').notEmpty().withMessage('El nombre no puede ir vacio').run(req)
